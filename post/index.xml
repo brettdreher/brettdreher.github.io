@@ -5,35 +5,26 @@
     <link>https://brettdreher.github.io/post/</link>
     <description>Recent content in Posts on Trident - IT, Cybersecurity &amp; Life Blogging</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://brettdreher.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brettdreher.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://brettdreher.github.io/post/page/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://brettdreher.github.io/post/page/</guid>
-      <description>Test first post to the platform</description>
-    </item>
-    
-    <item>
-      <title></title>
+      <title>The Anatomy of an Office 365 Business Email Compromise</title>
       <link>https://brettdreher.github.io/post/page2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://brettdreher.github.io/post/page2/</guid>
-      <description>Test second post to the platform</description>
+      <description>Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise.</description>
     </item>
     
     <item>
       <title>Finally, a blog.</title>
-      <link>https://brettdreher.github.io/post/page3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://brettdreher.github.io/post/page/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://brettdreher.github.io/post/page3/</guid>
-      <description>09-10-2023 Every time I&amp;rsquo;ve attempted to blog in the past it&amp;rsquo;s only ended in two or three posts, and then me getting frusted with managing wordpress and it&amp;rsquo;s awful ecosystem instead of getting my thoughts out. Hopefully this ends up in better results. Using Hugo with the PaperMod theme, it appears to offer a pretty clean look and very low impact.
-Hugo[^1]: https://gohugo.io/getting-started/quick-start/
-PaperMod Theme[^2]: https://github.com/adityatelange/hugo-PaperMod
-Markdown Reference[^3]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax</description>
+      <guid>https://brettdreher.github.io/post/page/</guid>
+      <description>Every time I&amp;rsquo;ve attempted to blog in the past it&amp;rsquo;s only ended in two or three posts, and then me getting frustrated with managing wordpress and it&amp;rsquo;s awful ecosystem instead of getting my thoughts out. Hopefully this ends up in better results. Using Hugo with the PaperMod theme, it appears to offer a pretty clean look and very low impact.
+hugo basics
+Spin up temporary server to preview site as built:</description>
     </item>
     
   </channel>
