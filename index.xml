@@ -6,14 +6,15 @@
     <description>Recent content on Trident - IT, Cybersecurity &amp; Life Blogging</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brettdreher.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brettdreher.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Anatomy of an Office 365 Business Email Compromise</title>
+      <title>Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home</title>
       <link>https://brettdreher.github.io/post/page2/</link>
-      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://brettdreher.github.io/post/page2/</guid>
-      <description>Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise.</description>
+      <description>This will be the start of my series of ongoing best practices and tips I&amp;rsquo;ve picked up handling incident responde and business email compromises in Office 365.
+One of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters.</description>
     </item>
     
     <item>
@@ -25,6 +26,17 @@
       <description>Every time I&amp;rsquo;ve attempted to blog in the past it&amp;rsquo;s only ended in two or three posts, and then me getting frustrated with managing wordpress and it&amp;rsquo;s awful ecosystem instead of getting my thoughts out. Hopefully this ends up in better results. Using Hugo with the PaperMod theme, it appears to offer a pretty clean look and very low impact.
 hugo basics
 Spin up temporary server to preview site as built:</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://brettdreher.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://brettdreher.github.io/about/</guid>
+      <description>Why is the blog called &amp;ldquo;Trident&amp;rdquo;?
+There&amp;rsquo;s a concept of the &amp;lsquo;CIA Triad&amp;rsquo; - Confidentiality, Integrity and Availability as the cornerstones of cybersecurity. This blog is me weaponizing the information I&amp;rsquo;ve learned over my life in both red team and blue team experience. I&amp;rsquo;m turning the CIA Triad into a Trident. If the gum company wants to sponsor me, contact information is below.
+Why should we read anything you post?</description>
     </item>
     
   </channel>

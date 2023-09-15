@@ -1,0 +1,39 @@
+---
+title: The Anatomy of an Office 365 Business Email Compromise
+date: 2023-09-10
+draft: yes
+---
+
+Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise. 
+
+There are many goals in a cybersecurity event - obviously we want to contain the threat, prevent or reduce harm, etc - but at the end of the engagement what we all are is storytellers. We need to tell the story of what happened. Just like great fables give us morals that we may use to better live our lives, we must tell the story of what happened to learn from it and make the apppropriate adjustments. 
+
+This is no different then what we see in journalism, we need all the basics: 
+Who, What, Where, When, Why and How. 
+
+For this series I'm going to go through various information gathering (and mitigation techniques) for a business email compromise of an Office 365 account. This is by no means exhaustive of every method but a collection of quirks and procedures that may save you time or give insight into things to check in your own environments. 
+
+Let's start with a scenario: 
+A user has reported that their email is acting strange, they aren't receiving emails they were supposed to. A technician reviewed and called in the security team when they determined the user recently clicked a phishing email and signed in with their Office 365 account. 
+
+
+Who - Identify the user in question. Is this user a cloud-only account? Is this user Active Directory Syched? 
+If the user is Active Directory synced I immediately start there and disable the account and run Azure AD Sync. 
+
+```Start-ADSyncSyncCycle -PolicyType Delta```
+
+Since there can be a time gap between this sync and the account actually being disabled I then disable the account in Azure Active Directory/Entra/Identity (love how they keep changing this name all over the platform) and immediate revoke all the sign in tokens. 
+
+With a cloud-only account we can simply disable and revoke all the current tokens. 
+
+Does this user have access to other company resources via this account? 
+
+
+
+
+
+Containment and Isolation 
+Account cleanup 
+MFA Methods
+Revoke tokens 
+

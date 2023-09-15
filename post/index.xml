@@ -6,14 +6,15 @@
     <description>Recent content in Posts on Trident - IT, Cybersecurity &amp; Life Blogging</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brettdreher.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brettdreher.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Anatomy of an Office 365 Business Email Compromise</title>
+      <title>Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home</title>
       <link>https://brettdreher.github.io/post/page2/</link>
-      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://brettdreher.github.io/post/page2/</guid>
-      <description>Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise.</description>
+      <description>This will be the start of my series of ongoing best practices and tips I&amp;rsquo;ve picked up handling incident responde and business email compromises in Office 365.
+One of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters.</description>
     </item>
     
     <item>

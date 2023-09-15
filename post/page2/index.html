@@ -5,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>The Anatomy of an Office 365 Business Email Compromise | Trident - IT, Cybersecurity &amp; Life Blogging</title>
+<title>Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home | Trident - IT, Cybersecurity &amp; Life Blogging</title>
 <meta name="keywords" content="">
-<meta name="description" content="Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise.">
+<meta name="description" content="This will be the start of my series of ongoing best practices and tips I&rsquo;ve picked up handling incident responde and business email compromises in Office 365.
+One of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters.">
 <meta name="author" content="">
 <link rel="canonical" href="https://brettdreher.github.io/post/page2/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
@@ -56,16 +57,18 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="The Anatomy of an Office 365 Business Email Compromise" />
-<meta property="og:description" content="Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise." />
+</noscript><meta property="og:title" content="Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home" />
+<meta property="og:description" content="This will be the start of my series of ongoing best practices and tips I&rsquo;ve picked up handling incident responde and business email compromises in Office 365.
+One of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://brettdreher.github.io/post/page2/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-09-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-09-10T00:00:00+00:00" />
+<meta property="article:published_time" content="2023-09-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-15T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Anatomy of an Office 365 Business Email Compromise"/>
-<meta name="twitter:description" content="Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise."/>
+<meta name="twitter:title" content="Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home"/>
+<meta name="twitter:description" content="This will be the start of my series of ongoing best practices and tips I&rsquo;ve picked up handling incident responde and business email compromises in Office 365.
+One of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters."/>
 
 
 <script type="application/ld+json">
@@ -82,7 +85,7 @@
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "The Anatomy of an Office 365 Business Email Compromise",
+      "name": "Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home",
       "item": "https://brettdreher.github.io/post/page2/"
     }
   ]
@@ -92,17 +95,17 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "The Anatomy of an Office 365 Business Email Compromise",
-  "name": "The Anatomy of an Office 365 Business Email Compromise",
-  "description": "Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise.",
+  "headline": "Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home",
+  "name": "Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home",
+  "description": "This will be the start of my series of ongoing best practices and tips I\u0026rsquo;ve picked up handling incident responde and business email compromises in Office 365.\nOne of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters.",
   "keywords": [
     
   ],
-  "articleBody": "Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise.\n",
-  "wordCount" : "29",
+  "articleBody": "This will be the start of my series of ongoing best practices and tips I’ve picked up handling incident responde and business email compromises in Office 365.\nOne of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters.\nMicrosoft also allows you within their defender platform to search the message explorer, find malicious emails and perform this same action manually. The privilege to use this feature however, is locked behind a tier of licensing many will not be paying for (Microsoft Defender for Office 365 Plan 2 at the time of writing this, when Microsoft changes it again don’t @ me).\nSince I’m used to walking into brand new environments I always have to expect I will have the most limited tools available to me - luckily, we have zero-hour auto purge at home aka Compliance Search \u0026 Purge. This used to be handled by the Search-Mailbox cmdlet however this is the currently supported method.\nScenario: Your users all received the same phishing email in their inbox, you’ve blocked the offending email address, you know the sender (ThreatActor@badguys.net) and the date the phish was sent to all mailboxes (9/14/2023)\nPermissions Required: Organization Management role in AzureAD\nPre-requisities: Installation \u0026 Import of ExchangeOnlline powershell module:\nInstall-Module ExchangeOnlineManagement Import-Module ExchangeOnlineManagement Known Limitations: You may only purge up to 10 items per mailbox on up to 50,000 mailboxes at once.\nConnect to the Compliance Center via ExchangeOnline Powershell module\nConnect-IPPSSession Run the following to create the compliance search, using KQL syntax. I tend to choose the date before the incident and the date after just to make sure everything is included, provided the KQL is not too vague to purge valid mail:\nNew-ComplianceSearch -Name Phish-09-15-2023 -ExchangeLocation All -ContentMatchQuery 'from:ThreatActor@badguys.net AND sent:09/13/2023..09/16/2023' Once created, we need to start the compliance search:\nStart-ComplianceSearch -Identity Phish-09-15-2023 And we can check the status of that search:\nGet-ComplianceSearch -Identity Phish-09-15-2023 | Format-List *` Once that reports successful we need to target that search for a purge, you can choose to either SoftDelete or HardDelete based on your preference and your organizations requirements, in this example we’ll be using SoftDelete:\nNew-ComplianceSearchAction -SearchName Phish-09-15-2023 -Purge -PurgeType SoftDelete We can get the status of this purge by the following. Please note this name is different then the original submission, once a purge action has been placed the actionable job is appended with _Purge\nGet-ComplianceSearchAction -Identity Phish-09-15-2023_Purge | Format-List Once this reports successful we have saved our users from potentially clicking on something bad. Now you’re free to start auditing sign in logs and other fun stuff to see who may have actually clicked or given up a token.\nThere are some other great web resources for more information regarding this topic, including:\nMicrosoft eDiscovery Search and Delete Messages\nMicrosoft eDiscovery Search Conditions\nCodeTwo - New-ComplianceSearch: how to use the newer version of Search-Mailbox\n",
+  "wordCount" : "507",
   "inLanguage": "en",
-  "datePublished": "2023-09-10T00:00:00Z",
-  "dateModified": "2023-09-10T00:00:00Z",
+  "datePublished": "2023-09-15T00:00:00Z",
+  "dateModified": "2023-09-15T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://brettdreher.github.io/post/page2/"
@@ -159,6 +162,11 @@
             </div>
         </div>
         <ul id="menu">
+            <li>
+                <a href="https://brettdreher.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -168,13 +176,39 @@
   <header class="post-header">
     
     <h1 class="post-title">
-      The Anatomy of an Office 365 Business Email Compromise
+      Microsoft Defender Office 365 Manual Mailbox Purge AKA We Have ZAP At Home
     </h1>
-    <div class="post-meta"><span title='2023-09-10 00:00:00 +0000 UTC'>September 10, 2023</span>
+    <div class="post-meta"><span title='2023-09-15 00:00:00 +0000 UTC'>September 15, 2023</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>Coming soon a mutlti-part series on a compilation of things to look for, current hurdles and tricks in the information gathering and securing of an Office 365 account compromise.</p>
+  <div class="post-content"><p>This will be the start of my series of ongoing best practices and tips I&rsquo;ve picked up handling incident responde and business email compromises in Office 365.</p>
+<p>One of the better features in Microsoft Defender for Office 365 is the <a href="https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-hour-auto-purge?view=o365-worldwide">Zero-hour auto purge</a>. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters.</p>
+<p>Microsoft also allows you within their defender platform to search the message explorer, find malicious emails and perform this same action manually. The privilege to use this feature however, is locked behind a tier of licensing many will not be paying for (Microsoft Defender for Office 365 Plan 2 at the time of writing this, when Microsoft changes it again don&rsquo;t @ me).</p>
+<p>Since I&rsquo;m used to walking into brand new environments I always have to expect I will have the most limited tools available to me - luckily, we have zero-hour auto purge at home aka Compliance Search &amp; Purge. This used to be handled by the Search-Mailbox cmdlet however this is the currently supported method.</p>
+<p><strong>Scenario</strong>: Your users all received the same phishing email in their inbox, you&rsquo;ve blocked the offending email address, you know the sender (<a href="mailto:ThreatActor@badguys.net">ThreatActor@badguys.net</a>) and the date the phish was sent to all mailboxes (9/14/2023)</p>
+<p><strong>Permissions Required</strong>: Organization Management role in AzureAD</p>
+<p><strong>Pre-requisities</strong>: Installation &amp; Import of ExchangeOnlline powershell module:</p>
+<pre tabindex="0"><code>Install-Module ExchangeOnlineManagement
+Import-Module ExchangeOnlineManagement
+</code></pre><p><strong>Known Limitations</strong>: You may only purge up to <a href="https://learn.microsoft.com/en-us/purview/ediscovery-search-for-and-delete-email-messages">10 items per mailbox on up to 50,000 mailboxes at once</a>.</p>
+<p>Connect to the Compliance Center via ExchangeOnline Powershell module</p>
+<pre tabindex="0"><code>Connect-IPPSSession
+</code></pre><p>Run the following to create the compliance search, using <a href="https://learn.microsoft.com/en-us/purview/ediscovery-keyword-queries-and-search-conditions">KQL syntax</a>. I tend to choose the date before the incident and the date after just to make sure everything is included, provided the KQL is not too vague to purge valid mail:</p>
+<pre tabindex="0"><code>New-ComplianceSearch -Name Phish-09-15-2023 -ExchangeLocation All -ContentMatchQuery &#39;from:ThreatActor@badguys.net AND sent:09/13/2023..09/16/2023&#39;
+</code></pre><p>Once created, we need to start the compliance search:</p>
+<pre tabindex="0"><code>Start-ComplianceSearch -Identity Phish-09-15-2023
+</code></pre><p>And we can check the status of that search:</p>
+<pre tabindex="0"><code>Get-ComplianceSearch -Identity Phish-09-15-2023 | Format-List *`
+</code></pre><p>Once that reports successful we need to target that search for a purge, you can choose to either <code>SoftDelete</code> or <code>HardDelete</code> based on your preference and your organizations requirements, in this example we&rsquo;ll be using SoftDelete:</p>
+<pre tabindex="0"><code>New-ComplianceSearchAction -SearchName Phish-09-15-2023 -Purge -PurgeType SoftDelete
+</code></pre><p>We can get the status of this purge by the following. Please note this name is different then the original submission, once a purge action has been placed the actionable job is appended with <code>_Purge</code></p>
+<pre tabindex="0"><code>Get-ComplianceSearchAction -Identity Phish-09-15-2023_Purge | Format-List
+</code></pre><p>Once this reports successful we have saved our users from potentially clicking on something bad. Now you&rsquo;re free to start auditing sign in logs and other fun stuff to see who may have actually clicked or given up a token.</p>
+<p>There are some other great web resources for more information regarding this topic, including:</p>
+<p><a href="https://learn.microsoft.com/en-us/purview/ediscovery-search-for-and-delete-email-messages">Microsoft eDiscovery Search and Delete Messages</a></p>
+<p><a href="https://learn.microsoft.com/en-us/purview/ediscovery-keyword-queries-and-search-conditions">Microsoft eDiscovery Search Conditions</a></p>
+<p><a href="https://www.codetwo.com/admins-blog/new-compliancesearch-new-version-of-search-mailbox/">CodeTwo - New-ComplianceSearch: how to use the newer version of Search-Mailbox</a></p>
 
 
   </div>
