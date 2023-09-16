@@ -13,7 +13,7 @@
       <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://brettdreher.github.io/post/page2/</guid>
-      <description>This will be the start of my series of ongoing best practices and tips I&amp;rsquo;ve picked up handling incident responde and business email compromises in Office 365.
+      <description>This will be the start of my series of ongoing best practices and tips I&amp;rsquo;ve picked up handling incident response and business email compromises in Office 365.
 One of the better features in Microsoft Defender for Office 365 is the Zero-hour auto purge. This will still use the threat intelligence data that Microsoft gathers to retroactively pull malicious items out of mailboxes that have gotten past their initial spam, phishing and malware filters.</description>
     </item>
     
